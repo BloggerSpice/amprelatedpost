@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html dir='rtl' lang='ar'>
+<head>
+<title>Results Only Layout</title>
+<style>
+.terbaru {
+    border-radius: 0px 0px 2px 2px;
+    background-color: #e7e7e7;
+    border-top: 4px solid #cfcfcf;
+}
+.mas-elemen{padding:12px 16px;border-bottom:3px solid #fff}
+.mas-elemen img{border:4px solid #eee;border-radius:8px;width:100%;height:160px;padding:3px;overflow:hidden;background-color:#223b55}
+.mas-elemen h6 a{font: normal normal 13px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;margin-right:10px;display:inline-block;margin-top:12px;max-height:72px;overflow:hidden;line-height:24px;font-size:14px;color:#1e344b}
+.mas-elemen:nth-of-type(2n){background-color:#d6d6d6}
+
+</style>
+
+
+<!-- Put the following javascript before the closing </head> tag. -->
+<script type='text/javascript'>
+          //<![CDATA[
+function showlatestpostswiththumbs(json) {
+document.write('<div class="terbaru">');
+    for (var i = 0; i < posts_no; i++) {
+        var entry = json.feed.entry[i];
+        var posttitle = entry.title.$t;
+        var postsurl;
+        if (i == json.feed.entry.length) break;
+        for (var k = 0; k < entry.link.length; k++) {
+            if (entry.link[k].rel == 'replies' && entry.link[k].type == 'text/html') {
+                var commentstext = entry.link[k].title;
+                var commentsurl = entry.link[k].href;
+            }
+            if (entry.link[k].rel == 'alternate') {
+                postsurl = entry.link[k].href;
+                break;
+            }
+        }
+        var recenthumb;
+        try {
+            recenthumb = entry.media$postImageUrl.url;
+        } catch (error) {
+            s = entry.content.$t;
+            a = s.indexOf("<img");
+            b = s.indexOf("src=\"", a);
+            c = s.indexOf("\"", b + 5);
+            d = s.substr(b + 5, c - b - 5);
+            if ((a != -1) && (b != -1) && (c != -1) && (d != "")) {
+                recenthumb = d;
+            } else recenthumb = 'http://2.bp.blogspot.com/-C3Mo0iKKiSw/VGdK808U7rI/AAAAAAAAAmI/W7Ae_dsEVAE/s1600/no-thumb.png';
+        }
+document.write('<div class="mas-elemen">');
+document.write('<a href="' + postsurl + '"><img src="' + recenthumb + '"/></a>');
+document.write('<h6><a href="' + postsurl + '" target ="_top">' + posttitle + '</a></h6>');
+document.write('</div>');}
+document.write('</div>');}
+          //]]>
+</script>
+<script style='text/javascript'>
+var posts_no = 7;
+var showpoststhumbs = true;
+var readmorelink = true;
+</script>
+<script src="http://www.darbahora.com/feeds/posts/default/?orderby=published&alt=json-in-script&callback=showlatestpostswiththumbs"></script>
+</head>
+
+<body>
+<!-- Place this tag where you want the search results to render -->
+<gcse:searchresults-only></gcse:searchresults-only>
+</body>
+
+</html>
