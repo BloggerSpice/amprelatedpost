@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html dir='rtl' lang='ar'>
+<head>
+<title>mkalty</title>
+<style>
+body {
+    overflow-x: hidden;
+    word-break: normal;
+    font: normal normal 13px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    line-height: 25px;
+    color: #828282;
+    margin: 0;
+    padding: 0;
+}
+a, abbr, acronym, address, applet, b, big, blockquote, body, caption, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, kbd, label, legend, li, object, p, pre, q, s, samp, small, span, strike, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, tt, u, ul, var {
+    margin: 0;
+}
+*, :before, :after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+a, a:visited {
+    text-decoration: none;
+}
+img {
+    position: relative;
+    
+@media screen and (max-width:600px) {
+.mas-elemen {max-width: 33.33%;}
+}
+@media screen and (max-width:500px) {
+.mas-elemen {max-width:50%;}
+}
+@media screen and (max-width:400px) {
+.mas-elemen {max-width:100%;}
+}
+    </style>
+
+
+<!-- Put the following javascript before the closing </head> tag. -->
+</head>
+
+<body>
+<!-- Place this tag where you want the search results to render -->
+<div id="jubna754">
+</div>
+<script type="text/javascript">
+(function() {
+var params =
+{
+id: "9668c4c8-2189dcc7-2f5ffe27-5725d056",
+d: "YWJvdWRjcm0uY29t",
+cb: (new Date()).getTime()
+}; 
+var qs="";
+for(var key in params){qs+=key+"="+params[key]+"&"}
+qs=qs.substring(0,qs.length-1);
+var s = document.createElement("script");
+s.type= 'text/javascript';
+s.src = "https://jubna.com/ar/api/widget/754?" + qs;
+s.async = true;
+document.getElementById("jubna754").appendChild(s);
+})();
+</script>
+</body>
+
+</html>
